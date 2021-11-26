@@ -28,7 +28,7 @@ function InVideoQuizXBlock(runtime, element) {
     $(function () {
         $('#seq_content .vert-mod .vert, #course-content .vert-mod .vert').each(function () {
             var component = $(this);
-
+            console.log("component", component)
             if (studentMode) {
                 setUpStudentView(component);
             } else {
