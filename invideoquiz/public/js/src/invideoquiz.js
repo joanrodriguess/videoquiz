@@ -43,7 +43,13 @@ function InVideoQuizXBlock(runtime, element) {
     });
 
     function setUpStudentView(component) {
-        var componentIsVideo = component.data('id').indexOf(videoId) !== -1;
+        var componentIsVideo
+        try{
+          componentIsVideo = component.data('id').indexOf(videoId) !== -1;
+        }catch(error){
+          componentIsVideo = false
+        }
+        
         if (componentIsVideo) {
             video = $('.video', component);
         } else {
